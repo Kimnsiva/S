@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivaporn Phumimit - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#f8fafc',
+                        'light-card': '#ffffff',
+                        'light-text': '#334155',
+                        'light-accent': '#3b82f6',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#e2e8f0',
+                        'dark-accent': '#60a5fa'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-light-card dark:bg-dark-card shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-light-accent dark:text-dark-accent">Sivaporn Phumimit</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-light-accent dark:text-dark-accent font-medium border-b-2 border-light-accent dark:border-dark-accent pb-1">Overview</a>
+                    <a href="skills.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Skills</a>
+                    <a href="experience.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Experience</a>
+                    <a href="certificates.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Certificates</a>
+                    <a href="lifestyle.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Lifestyle</a>
+                </nav>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-light-accent dark:text-dark-accent font-medium py-2 px-3 rounded-lg bg-light-accent/10 dark:bg-dark-accent/10">Overview</a>
+                    <a href="skills.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Skills</a>
+                    <a href="experience.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Experience</a>
+                    <a href="certificates.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Certificates</a>
+                    <a href="lifestyle.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Lifestyle</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-light-card dark:bg-dark-card rounded-lg shadow-sm p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Profile Photo -->
+                <div class="md:col-span-1">
+                    <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-4 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Profile Photo Placeholder</p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">(profile.jpg)</p>
+                    </div>
+                </div>
+                
+                <!-- Profile Info -->
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-light-accent dark:text-dark-accent mb-4">Sivaporn Phumimit</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">Senior IT Support Specialist</p>
+                    
+                    <!-- Contact Information -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="text-sm">Bangkok, Thailand</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span class="text-sm">+66 (0) XX XXX XXXX</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="text-sm">sivaporn.phumimit@email.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-light-accent dark:text-dark-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-2M8 7h8"/>
+                            </svg>
+                            <span class="text-sm">28 years old</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Download CV Button -->
+                    <div class="mb-6">
+                        <a href="Sivaporn-Resume.pdf" download class="inline-flex items-center px-6 py-3 bg-light-accent dark:bg-dark-accent text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Career Objective -->
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="text-2xl font-bold text-light-accent dark:text-dark-accent mb-4">Career Objective</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Dedicated IT Support Specialist with over 5 years of experience in providing comprehensive technical support, 
+                    system administration, and user training across diverse technology environments. Proven expertise in managing 
+                    Microsoft 365, Azure AD, and ERP systems while supporting 80+ users in enterprise settings. Passionate about 
+                    leveraging emerging technologies including AI tools to enhance productivity and streamline IT operations. 
+                    Seeking to contribute technical expertise and problem-solving skills to drive digital transformation and 
+                    optimize IT infrastructure in a forward-thinking organization.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light-card dark:bg-dark-card mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2025 Sivaporn Phumimit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality
+        let isDarkMode = false;
+        
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            
+            if (isDarkMode) {
+                html.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                html.classList.remove('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+        
+        // Event listeners
+        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+        document.getElementById('mobileMenuButton').addEventListener('click', toggleMobileMenu);
+        
+        // Initialize theme
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default to light mode
+            isDarkMode = false;
+        });
+    </script>
+</body>
+</html>

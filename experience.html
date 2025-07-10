@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience - Sivaporn Phumimit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#f8fafc',
+                        'light-card': '#ffffff',
+                        'light-text': '#334155',
+                        'light-accent': '#3b82f6',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#e2e8f0',
+                        'dark-accent': '#60a5fa'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-light-card dark:bg-dark-card shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-light-accent dark:text-dark-accent">Sivaporn Phumimit</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Overview</a>
+                    <a href="skills.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Skills</a>
+                    <a href="experience.html" class="text-light-accent dark:text-dark-accent font-medium border-b-2 border-light-accent dark:border-dark-accent pb-1">Experience</a>
+                    <a href="certificates.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Certificates</a>
+                    <a href="lifestyle.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent transition-colors">Lifestyle</a>
+                </nav>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Overview</a>
+                    <a href="skills.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Skills</a>
+                    <a href="experience.html" class="text-light-accent dark:text-dark-accent font-medium py-2 px-3 rounded-lg bg-light-accent/10 dark:bg-dark-accent/10">Experience</a>
+                    <a href="certificates.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Certificates</a>
+                    <a href="lifestyle.html" class="text-light-text dark:text-dark-text hover:text-light-accent dark:hover:text-dark-accent py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Lifestyle</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-light-card dark:bg-dark-card rounded-lg shadow-sm p-8">
+            <h2 class="text-3xl font-bold text-light-accent dark:text-dark-accent mb-8">Work Experience</h2>
+            
+            <!-- Job 1 -->
+            <div class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-light-text dark:text-dark-text">Senior IT Support</h3>
+                        <p class="text-lg text-light-accent dark:text-dark-accent font-medium">SMFL Leasing Thailand</p>
+                    </div>
+                    <div class="mt-2 sm:mt-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
+                            Oct 2024 - Present
+                        </span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Provided IT support for 80 users, including hardware/software troubleshooting.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Managed user access control and ERP system support.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Conducted user training and documentation for new technology rollouts.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Coordinated with HQ IT for technology testing and updates.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Job 2 -->
+            <div class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-light-text dark:text-dark-text">IT Support</h3>
+                        <p class="text-lg text-light-accent dark:text-dark-accent font-medium">Cloud HM Public Company Limited</p>
+                    </div>
+                    <div class="mt-2 sm:mt-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+                            Aug 2022 - Sept 2024
+                        </span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Maintained IT infrastructure including Microsoft 365, Azure AD.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Managed IT asset inventory and network monitoring systems.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Resolved tickets via Comindware Tracker.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Job 3 -->
+            <div class="mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-light-text dark:text-dark-text">Technical Tool Specialist</h3>
+                        <p class="text-lg text-light-accent dark:text-dark-accent font-medium">MFEC PCL (on-site KTC)</p>
+                    </div>
+                    <div class="mt-2 sm:mt-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
+                            May 2021 - Aug 2022
+                        </span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Managed IT operations tools (SolarWinds, ServiceNow).</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Reported and coordinated network activities.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Job 4 -->
+            <div class="mb-8">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-light-text dark:text-dark-text">Operator System</h3>
+                        <p class="text-lg text-light-accent dark:text-dark-accent font-medium">MFEC PCL (on-site KBTG)</p>
+                    </div>
+                    <div class="mt-2 sm:mt-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">
+                            Jan 2019 - Apr 2021
+                        </span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Monitored batch job execution (OPEN platform/Mainframe).</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Provided support for Network Operation Center.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-light-accent dark:text-dark-accent mt-1">•</span>
+                        <span>Monitored ATM, EDC, kiosk alarms.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light-card dark:bg-dark-card mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2025 Sivaporn Phumimit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode functionality with localStorage
+        function initializeDarkMode() {
+            const savedTheme = localStorage.getItem('darkMode');
+            const isDarkMode = savedTheme === 'true';
+            
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            
+            if (isDarkMode) {
+                html.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                html.classList.remove('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+            
+            return isDarkMode;
+        }
+        
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            
+            const isDarkMode = html.classList.contains('dark');
+            
+            if (isDarkMode) {
+                html.classList.remove('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                html.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDarkMode();
+            
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+            document.getElementById('mobileMenuButton').addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+</body>
+</html>
