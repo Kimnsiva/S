@@ -459,101 +459,53 @@
     </footer>
 
     <script>
-        // Dark mode functionality
-        function initializeDarkMode() {
-            const savedTheme = localStorage.getItem('darkMode');
-            const isDarkMode = savedTheme === 'true';
-            
-            const html = document.documentElement;
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
-            
-            if (isDarkMode) {
-                html.classList.add('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            } else {
-                html.classList.remove('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            }
-            
-            return isDarkMode;
-        }
-        
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
-            
-            const isDarkMode = html.classList.contains('dark');
-            
-            if (isDarkMode) {
-                html.classList.remove('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-                localStorage.setItem('darkMode', 'false');
-            } else {
-                html.classList.add('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        }
-        
-        // Modal functionality
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-        
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-        
-        // Close modal when clicking outside
-        function closeModalOnOutsideClick(event, modalId) {
-            const modal = document.getElementById(modalId);
-            if (event.target === modal) {
-                closeModal(modalId);
-            }
-        }
-        
-        // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDarkMode();
-            
-            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-            document.getElementById('mobileMenuButton').addEventListener('click', toggleMobileMenu);
-            
-            // Add outside click listeners for all modals
+      function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden');
+}
+
+// Modal functionality
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+
+function closeModalOnOutsideClick(event, modalId) {
+    const modal = document.getElementById(modalId);
+    if (event.target === modal) {
+        closeModal(modalId);
+    }
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('mobileMenuButton').addEventListener('click', toggleMobileMenu);
+
+    ['modal1', 'modal2', 'modal3', 'modal4'].forEach(modalId => {
+        document.getElementById(modalId).addEventListener('click', function (event) {
+            closeModalOnOutsideClick(event, modalId);
+        });
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
             ['modal1', 'modal2', 'modal3', 'modal4'].forEach(modalId => {
-                document.getElementById(modalId).addEventListener('click', function(event) {
-                    closeModalOnOutsideClick(event, modalId);
-                });
-            });
-            
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    ['modal1', 'modal2', 'modal3', 'modal4'].forEach(modalId => {
-                        const modal = document.getElementById(modalId);
-                        if (!modal.classList.contains('hidden')) {
-                            closeModal(modalId);
-                        }
-                    });
+                const modal = document.getElementById(modalId);
+                if (!modal.classList.contains('hidden')) {
+                    closeModal(modalId);
                 }
             });
-        });
+        }
+    });
+});
+
     </script>
 </body>
 </html>
