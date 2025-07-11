@@ -263,43 +263,7 @@
             </div>
         </div>
     </footer>
+<script src="js/theme.js"></script>
 
-    <script>
-        // Dark mode functionality
-        let isDarkMode = false;
-        
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            const html = document.documentElement;
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
-            
-            if (isDarkMode) {
-                html.classList.add('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            } else {
-                html.classList.remove('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            }
-        }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        }
-        
-        // Event listeners
-        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-        document.getElementById('mobileMenuButton').addEventListener('click', toggleMobileMenu);
-        
-        // Initialize theme
-        document.addEventListener('DOMContentLoaded', function() {
-            // Default to light mode
-            isDarkMode = false;
-        });
-    </script>
 </body>
 </html>
